@@ -7,6 +7,9 @@ artifacts/
 videosandimages/
 designerror/
 qa/
+prints/
+prints-bruel-cliente/
+prints-bruel-cliente.zip
 prompt.txt
 *.log
 *.tsbuildinfo

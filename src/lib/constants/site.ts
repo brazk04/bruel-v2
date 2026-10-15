@@ -3,6 +3,7 @@ export const site = {
   title: "Bruel — Tattoo & Street Art",
   description: "Tattoo, arte autoral, graffiti e street art.",
   location: "Rio Verde — GO, Brasil",
+  instagramUrl: "https://www.instagram.com/bruel_tattoo/",
 } as const;
 
 export const navigation = [

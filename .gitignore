@@ -16,6 +16,9 @@ videosandimages/
 designerror/
 prompt.txt
 qa/
+prints/
+prints-bruel-cliente/
+prints-bruel-cliente.zip
 .env
 .env.*
 !.env.example

@@ -8,12 +8,13 @@ export type ArtistImage = {
 
 // Texto editorial provisório. Substituir pela biografia e pelo acervo fornecidos pelo artista.
 export const artist = {
-  name: "Bruel",
+  name: "Bruno Maciel",
+  nickname: "Bruel",
   base: "Rio Verde — GO",
   country: "Brasil",
   introduction: "Entre pele, tinta e cidade.",
   bio: [
-    "Bruel desenvolve uma linguagem visual que atravessa tattoo, graffiti e arte urbana.",
+    "Bruno Maciel, conhecido como Bruel, desenvolve uma linguagem visual que atravessa tattoo, graffiti e arte urbana.",
     "Desenho, identidade e rua se encontram em trabalhos que mudam de superfície e de escala sem perder presença.",
   ],
   fields: [

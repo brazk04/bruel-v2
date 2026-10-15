@@ -4,11 +4,12 @@ import { ArtistImage } from "@/components/artist/artist-image";
 import { ContactChoiceTrigger } from "@/components/contact/contact-choice";
 import { Container } from "@/components/ui/container";
 import { artist } from "@/data/artist";
+import { site } from "@/lib/constants/site";
 import "./sobre.css";
 
 export const metadata: Metadata = {
   title: { absolute: "Sobre — Bruel Tattoo & Graffiti" },
-  description: "Conheça Bruel, artista que trabalha com tattoo, graffiti e arte urbana em Rio Verde — GO.",
+  description: "Conheça Bruno Maciel, conhecido como Bruel, artista de tattoo, graffiti e arte urbana em Rio Verde — GO.",
 };
 
 export default function SobrePage() {
@@ -16,13 +17,13 @@ export default function SobrePage() {
     <section className="artist-hero" aria-labelledby="artist-title"><Container className="artist-hero-layout">
       <div className="artist-hero-top"><span>03 / ARTIST</span><span>TATTOO / GRAFFITI / ART</span></div>
       <div className="artist-hero-portrait"><ArtistImage image={artist.images[0]} priority /></div>
-      <div className="artist-hero-copy"><span>ARTIST / RIO VERDE — GO</span><h1 id="artist-title">Bruel<span>.</span></h1><p>Tattoo.<br />Graffiti.<br /><em>Identidade.</em></p></div>
+      <div className="artist-hero-copy"><span>ARTIST / {artist.nickname.toUpperCase()} / RIO VERDE — GO</span><h1 id="artist-title" className="artist-fullname">{artist.name}<span>.</span></h1><p>Tattoo.<br />Graffiti.<br /><em>Identidade.</em></p></div>
       <div className="artist-hero-bottom"><span>{artist.introduction}</span><a href="#biografia">CONHECER O ARTISTA <span aria-hidden="true">↓</span></a></div>
     </Container></section>
 
     <section className="artist-bio" id="biografia" aria-labelledby="artist-bio-title"><Container>
       <div className="artist-rule"><span>ARTIST / 03</span><span>UMA LINGUAGEM, VÁRIOS SUPORTES</span></div>
-      <div className="artist-bio-grid"><div><span className="artist-section-index">01 / APRESENTAÇÃO</span><h2 id="artist-bio-title">O artista por trás<br />do <em>traço.</em></h2></div><div className="artist-bio-text"><p className="artist-bio-lead">{artist.bio[0]}</p><p>{artist.bio[1]}</p><small>APRESENTAÇÃO EDITORIAL / BIOGRAFIA COMPLETA EM PREPARAÇÃO</small></div></div>
+      <div className="artist-bio-grid"><div><span className="artist-section-index">01 / APRESENTAÇÃO</span><h2 id="artist-bio-title">O artista por trás<br />do <em>traço.</em></h2></div><div className="artist-bio-text"><p className="artist-bio-lead">{artist.bio[0]}</p><p>{artist.bio[1]}</p><a href={site.instagramUrl} target="_blank" rel="noopener noreferrer" className="artist-instagram" aria-label="Ver o Instagram de Bruel, @bruel_tattoo">ACOMPANHE NO INSTAGRAM / @BRUEL_TATTOO ↗</a></div></div>
     </Container></section>
 
     <section className="artist-manifesto" aria-labelledby="artist-manifesto-title"><Container><div className="artist-rule"><span>MANIFESTO / VISUAL</span><span>PELE + RUA + DESENHO</span></div><div className="artist-manifesto-body"><span className="artist-manifesto-mark" aria-hidden="true">B/R</span><h2 id="artist-manifesto-title">Pele.<br />Cidade.<br /><em>Presença.</em></h2><p>O suporte muda. A intenção de criar imagens com identidade permanece.</p></div></Container></section>
