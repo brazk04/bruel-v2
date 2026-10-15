@@ -1,0 +1,15 @@
+node_modules/
+.next/
+.git/
+.npm-cache/
+.cache/
+artifacts/
+videosandimages/
+designerror/
+qa/
+prompt.txt
+*.log
+*.tsbuildinfo
+.env
+.env.*
+!.env.example

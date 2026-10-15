@@ -1,0 +1,335 @@
+/* BRUEL — rua, arquivo e sinal. Shared visual language; functional layout stays in its components. */
+
+body :is(h1, h2, h3) { font-family: var(--font-display); font-style: normal; text-transform: uppercase; }
+body :is(h1, h2, h3) em { font-style: normal; }
+body em { font-style: normal; }
+body :is(h1, h2, h3, .mobile-links a) { font-weight: 600; }
+body :is(h1, h2, h3) { letter-spacing: -.025em; }
+body button:focus-visible, body a:focus-visible { outline-color: var(--technical-cyan); }
+body ::selection { background: var(--signal-red-deep); color: var(--paper); }
+.noise-overlay { opacity: var(--grain-opacity); }
+.noise-overlay::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 3px, #e5e1d81c 3px 4px); opacity: var(--scan-opacity); }
+
+/* Straight metal edges, one signal colour. */
+body .button { border-radius: var(--radius); transition-duration: var(--fast); }
+body .button:hover { transform: translateY(-2px); box-shadow: none; }
+body .button-primary, body .booking-next { background: var(--signal-red); color: #fff9f2; border-color: var(--signal-red); }
+body .button-primary:hover, body .booking-next:hover { background: var(--rust-hover); border-color: var(--rust-hover); }
+body .button-primary::before { content: ''; width: 4px; height: 4px; flex: none; background: currentColor; opacity: .8; }
+body .button-secondary, body .button-ghost { border-color: var(--line-strong); }
+body .button-secondary:hover, body .button-ghost:hover { border-color: var(--paper); background: var(--surface); }
+.section-topline, .artist-rule, .street-section-rule { position: relative; }
+.section-topline::before, .artist-rule::before, .street-section-rule::before { content: ''; position: absolute; top: -1px; left: 0; width: 26px; height: 2px; background: var(--signal-red); }
+body .tag { padding: .5rem .65rem; border-color: var(--line-strong); font-size: .61rem; letter-spacing: .08em; }
+
+/* Navigation retains its routes, touch targets and native dialog. */
+body .site-header { border-bottom-color: var(--line); background: #050505ed; }
+body .site-header-scrolled { background: #050505f5; backdrop-filter: none; }
+body .header-inner { min-height: 5.1rem; gap: 2.3rem; }
+body .logo strong { font-family: var(--font-display); font-weight: 700; font-size: 2.5rem; letter-spacing: -.035em; line-height: .83; }
+body .logo small { font-size: .42rem; letter-spacing: .1em; }
+body .logo-period { color: var(--signal-red); }
+body .logo:hover strong { letter-spacing: -.02em; opacity: 1; }
+body .desktop-nav a { font-size: .62rem; letter-spacing: .06em; }
+body .desktop-nav a:hover { color: var(--paper); }
+body .desktop-nav a::after { background: var(--signal-red); height: 2px; }
+body .desktop-nav a[aria-current="page"]::after { transform: scaleX(1); }
+body .header-cta { min-height: 2.8rem; font-size: .63rem; }
+body .menu-toggle { font-size: .65rem; }
+body .menu-symbol { font-family: var(--font-sans); font-size: 1.65rem; }
+body .mobile-menu { background: var(--bg); }
+body .mobile-menu-top { border-bottom: 1px solid var(--line); background: var(--bg); }
+body .mobile-links a { font-family: var(--font-display); font-size: clamp(3.1rem, 12.7vw, 6.5rem); text-transform: uppercase; letter-spacing: -.02em; padding-block: .8rem; line-height: 1; }
+body .mobile-links a span { color: var(--signal-red-light); }
+body .mobile-links a:hover { color: var(--paper); padding-left: .25rem; }
+body .mobile-book { padding: 1rem; border: 1px solid var(--signal-red); background: var(--signal-red-deep); color: var(--paper); }
+
+/* The opening is an artist's process feed, framed by print and industrial signage. */
+body .home-hero { background: var(--bg); }
+body .hero-layout { padding-top: 5.1rem; }
+body .hero-copy { padding-top: 3.5rem; }
+body .hero-copy .eyebrow { color: var(--paper-deep); font-size: .62rem; display: flex; flex-wrap: wrap; align-items: center; gap: .8rem; }
+.hero-signal { display: inline-flex; align-items: center; gap: .4rem; font-size: .54rem; color: var(--technical-cyan); letter-spacing: .04em; }
+.hero-signal::before { content: ''; width: 4px; height: 4px; background: var(--technical-cyan); }
+body .hero-copy h1 { font-size: clamp(5rem, 8.2vw, 9.7rem); line-height: .89; letter-spacing: -.025em; margin-block: clamp(2.5rem, 4.8vw, 5rem) 2rem; }
+body .hero-copy h1 em { color: var(--paper); }
+body .hero-title-line:nth-child(2) { color: var(--paper-deep); }
+body .hero-title-line:nth-child(2) em { color: var(--paper-deep); }
+body .hero-title-line > span { animation-name: hero-type-in; animation-duration: 400ms; }
+body .hero-title-line:nth-child(1) > span { animation-delay: 80ms; }
+body .hero-title-line:nth-child(2) > span { animation-delay: 130ms; }
+body .hero-title-line:nth-child(3) > span { animation-delay: 180ms; }
+body .hero-copy > p { animation-duration: 350ms; animation-delay: 260ms; }
+body .hero-actions { animation-duration: 350ms; animation-delay: 330ms; }
+body .hero-bottom-line { animation-duration: 300ms; animation-delay: 400ms; }
+body .hero-visual-mark { animation-duration: 350ms; animation-delay: 200ms; }
+body .hero-copy > p { font-size: clamp(.95rem, 1.1vw, 1.05rem); max-width: 22rem; }
+body .hero-actions .button { gap: 1.3rem; font-size: .64rem; }
+body .hero-bottom-line { font-size: .54rem; letter-spacing: .04em; }
+body .hero-bottom-line a span { animation: none; }
+body .hero-visual { background: var(--bg-soft); border-left: 1px solid var(--line); }
+body .hero-image { filter: grayscale(.65) saturate(.35) contrast(1.15) brightness(.66); }
+body .hero-image-vignette { background: linear-gradient(90deg, #0505057a, transparent 35%), linear-gradient(0deg, #050505e6, transparent 58%); }
+body .hero-visual-label { color: var(--paper-deep); font-size: .55rem; letter-spacing: .05em; }
+body .hero-visual-index { color: var(--technical-cyan); font-size: .55rem; }
+body .hero-visual-mark { font-family: var(--font-display); font-size: clamp(8rem, 18vw, 22rem); font-weight: 700; font-style: normal; letter-spacing: -.025em; line-height: .8; left: 1.5rem; bottom: 4rem; opacity: .7; }
+body .hero-visual-mark span { font-size: 1em; color: var(--signal-red); }
+body .skull-atmosphere-image { filter: grayscale(1) contrast(1.45) brightness(.42); mix-blend-mode: screen; mask-image: linear-gradient(90deg, transparent, #000 28%, #000 70%, transparent); }
+body .skull-atmosphere::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 4px, #05050536 4px 5px); opacity: .22; pointer-events: none; }
+body .ember { background: var(--signal-red); box-shadow: var(--glow-signal); }
+body .ember-aura { background: radial-gradient(circle, #84181229, transparent 66%); }
+
+/* A camera label belongs to this frame; no fictional telemetry or live counters. */
+body .film-player { border-color: var(--line-strong); box-shadow: var(--shadow); }
+body .film-media::after { content: ''; position: absolute; inset: .4rem; border: 1px solid #e5e1d826; pointer-events: none; }
+body .film-media video { filter: saturate(.68) contrast(1.09); }
+body .film-topline, body .film-bottomline { font-size: .52rem; letter-spacing: .05em; }
+body .film-topline > span:first-child { color: var(--technical-cyan); }
+body .film-rec { color: var(--paper); }
+body .film-rec i { background: var(--signal-red); box-shadow: var(--glow-signal); }
+body .film-treatment { background: linear-gradient(0deg, #050505d9, transparent 32%, transparent 72%, #050505b8); }
+
+/* Editorial sections keep their asymmetry and give the artwork breathing room. */
+body .manifesto-section { background: var(--surface); }
+body .manifesto-layout h2 { font-size: clamp(3.2rem, 6vw, 7rem); line-height: .98; letter-spacing: -.02em; }
+body .manifesto-layout h2 em { color: var(--paper-deep); }
+body .manifesto-cross { color: var(--signal-red); font-family: var(--font-sans); }
+body .works-heading h2, body .about-copy h2, body .process-intro h2, body .footer-upper h2 { line-height: .96; letter-spacing: -.02em; }
+body .work-caption h3 { font-family: var(--font-display); font-size: clamp(1.5rem, 2.7vw, 2.5rem); letter-spacing: .01em; font-weight: 600; }
+body .work-caption > span { color: var(--signal-red-light); }
+body .work-image { border: 1px solid var(--line); }
+body .work-image-index { color: var(--paper); background: #050505c9; padding: .4rem .5rem; }
+body .work-tattoo .work-image img, body .work-drawings .work-image img, body .work-authorial .work-image img, body .work-street .work-image img { filter: saturate(.68) contrast(1.08) brightness(.94); }
+body .work-card:hover .work-image img { filter: saturate(.85) contrast(1.04); transform: scale(1.025); }
+body .discipline-panel { background-color: var(--surface); }
+body .discipline-panel h3 { font-size: clamp(4.5rem, 8.5vw, 10rem); font-family: var(--font-display); font-weight: 600; font-style: normal; letter-spacing: -.02em; }
+body .discipline-panel h3 em { color: var(--paper-deep); }
+body .discipline-number { color: var(--signal-red-light); }
+body .about-art { border: 1px solid var(--line); }
+body .about-art-photo::before { border-color: var(--line-strong); }
+body .about-art-photo img { filter: saturate(.62) contrast(1.1); }
+body .process-list h3 { font-family: var(--font-display); font-size: clamp(1.65rem, 2.5vw, 2.4rem); font-weight: 600; letter-spacing: .01em; }
+body .final-cta h2 { font-size: clamp(4.2rem, 9vw, 10rem); line-height: .96; letter-spacing: -.02em; }
+body .final-cta::before { filter: grayscale(.85) brightness(.3); }
+body .footer { background: var(--bg); border-top: 1px solid var(--metal); }
+body .footer-upper { position: relative; }
+body .footer-mail { border-color: var(--signal-red); }
+body .footer-mail:hover { color: var(--signal-red-light); }
+body .footer-main .logo strong { font-size: clamp(4rem, 7vw, 8rem); }
+body .footer-end > span:nth-child(2) { color: var(--muted); }
+
+/* Archive: photography dominates. The red line marks selection. */
+body .gallery-intro { background: var(--bg); }
+body .gallery-intro h1 { font-size: clamp(5.5rem, 13vw, 14rem); line-height: .9; letter-spacing: -.02em; }
+body .gallery-intro-lead { font-family: var(--font-display); font-size: clamp(2.2rem, 4vw, 4rem); font-weight: 600; line-height: 1; letter-spacing: -.01em; }
+body .tattoo-gallery-section { background: var(--bg); }
+body .tattoo-filters button { font-size: .62rem; letter-spacing: .03em; }
+body .tattoo-filter-active::after { background: var(--signal-red); }
+body .gallery-disclosure { font-size: .56rem; letter-spacing: .06em; }
+body .tattoo-card-caption h3 { font-size: clamp(1.9rem, 3.3vw, 3.3rem); line-height: 1; letter-spacing: -.01em; }
+body .tattoo-visual:not(.tattoo-visual-placeholder) img { filter: saturate(.8) contrast(1.04); }
+body .tattoo-card:hover .tattoo-visual img { transform: scale(1.025); }
+body .tattoo-card-video { border-color: var(--line-strong); background: #050505e8; }
+body .tattoo-card-open { border-color: var(--signal-red); }
+body .tattoo-lightbox, body .street-lightbox { background: var(--bg); border-color: var(--line-strong); }
+body .lightbox-top, body .street-lightbox-top { background: var(--surface); }
+body .lightbox-info { border-color: var(--line); }
+body .lightbox-info h2 { font-size: clamp(3rem, 4.5vw, 5.3rem); letter-spacing: -.015em; }
+body .lightbox-media-switch { background: var(--bg); border-color: var(--line-strong); }
+body .lightbox-media-switch button[aria-pressed="true"] { color: var(--paper); border-color: var(--signal-red); background: var(--signal-red-deep); }
+body .lightbox-controls button { border-color: var(--line-strong); }
+body .lightbox-controls button:hover { background: var(--metal); }
+
+/* Street / artist: one visual system across the existing pages. */
+body .street-hero-image img { filter: saturate(.5) contrast(1.12) brightness(.55); }
+body .street-hero h1 { font-size: clamp(5rem, 12.5vw, 14rem); line-height: .88; letter-spacing: -.025em; }
+body .street-featured, body .street-index, body .artist-trajectory { background: var(--bg-soft); }
+body .street-project-caption h3 { font-size: clamp(2.3rem, 4vw, 4.4rem); letter-spacing: -.015em; }
+body .street-visual-photo { border: 1px solid var(--line); }
+body .street-visual img { filter: saturate(.8) contrast(1.05); }
+body .street-visual-corner { background: #050505d9; padding: .5rem .6rem; }
+body .street-detail h1 { font-size: clamp(4.5rem, 9.7vw, 11rem); line-height: .91; letter-spacing: -.02em; }
+body .street-detail-story h2 { line-height: .96; letter-spacing: -.02em; }
+body .street-manifesto h2 { font-size: clamp(5rem, 12vw, 13rem); line-height: .92; letter-spacing: -.02em; }
+body .street-prelude h2 { font-size: clamp(5rem, 12vw, 13rem); line-height: .9; letter-spacing: -.025em; }
+body .artist-hero { background: var(--bg); }
+body .artist-hero h1 { font-size: clamp(9rem, 24vw, 27rem); font-weight: 700; line-height: .8; letter-spacing: -.025em; }
+body .artist-hero-copy p { font-family: var(--font-display); font-weight: 600; line-height: .95; font-size: clamp(2.5rem, 4.5vw, 5rem); text-transform: uppercase; letter-spacing: -.01em; }
+body .artist-hero-portrait { border-left: 1px solid var(--line); }
+body .artist-image-label { background: #050505d9; font-size: .54rem; }
+body .artist-image img { filter: saturate(.68) contrast(1.08); }
+body .artist-hero-bottom > span { font-family: var(--font-sans); font-style: normal; font-size: .9rem; letter-spacing: 0; }
+body .artist-manifesto-mark { font-family: var(--font-display); font-weight: 700; font-style: normal; letter-spacing: -.02em; }
+body .artist-bio h2, body .artist-trajectory h2, body .artist-process h2, body .artist-document h2, body .artist-contact h2, body .artist-statement h2, body .artist-manifesto h2, body .artist-bridge h2 { line-height: .96; letter-spacing: -.02em; }
+body .artist-trajectory li h3, body .artist-process li h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(2rem, 3.3vw, 3.2rem); letter-spacing: -.01em; }
+
+/* Project request: retain the human labels, validation and six steps. */
+body .booking-page { background: var(--bg-soft); }
+body .booking-progress li { border-top-color: var(--metal-light); }
+body .booking-progress .booking-progress-done { border-color: var(--paper-deep) !important; }
+body .booking-progress .booking-progress-current { border-color: var(--signal-red) !important; }
+body .booking-progress-current > span { color: var(--technical-cyan); }
+body .booking-editorial h1 { font-family: var(--font-display); font-size: clamp(4rem, 25cqw, 10rem); line-height: .95; letter-spacing: -.02em; }
+body .booking-editorial h1.booking-title-long { font-size: clamp(2rem, 14cqw, 6rem); }
+body .booking-editorial-end b { font-family: var(--font-display); font-weight: 700; font-style: normal; letter-spacing: -.03em; color: var(--metal); }
+body .booking-panel { border-top-color: var(--line-strong); }
+body .booking-field input, body .booking-field textarea, body .booking-unit-input { background: var(--surface); border-color: var(--line-strong); }
+body .booking-field input:focus, body .booking-field textarea:focus, body .booking-unit-input:focus-within { background: var(--surface-elevated); border-color: var(--technical-cyan); }
+body .booking-choice { background: var(--surface); border-color: var(--line-strong); font-size: .64rem; }
+body .booking-choice-selected { background: #84181230; border-color: var(--signal-red-light); }
+body .booking-choice:focus-within { outline-color: var(--technical-cyan); }
+body .booking-choice-selected b { color: var(--paper); }
+body .booking-field-error input, body .booking-field-error textarea, body .booking-field-error .booking-unit-input { border-color: var(--signal-red-light); }
+body .booking-error { color: var(--signal-red-light); }
+body .booking-upload { background: var(--surface); border-color: var(--line-strong); }
+body .booking-upload:hover { background: var(--surface-elevated); border-color: var(--signal-red-light); }
+body .booking-review-heading h2 { font-family: var(--font-mono); font-size: .7rem; font-weight: 500; letter-spacing: .06em; }
+body .booking-message-preview { border-color: var(--line-strong); background: var(--surface); }
+body .booking-message-preview pre { font-family: var(--font-sans); }
+body .contact-choice-dialog { border-color: var(--line-strong); background: var(--surface); box-shadow: var(--shadow); }
+body .contact-choice-inner, body .contact-choice-top { background: var(--surface); }
+body .contact-choice-top { border-top-color: var(--signal-red); }
+body .contact-choice-copy h2 { font-size: clamp(3.5rem, 6.5vw, 6rem); line-height: .95; letter-spacing: -.02em; }
+body .contact-choice-option { background: var(--surface-elevated); border-color: var(--line-strong); }
+body .contact-choice-option-primary { background: #84181230; border-color: var(--signal-red-light); }
+body .contact-choice-option:hover { transform: translateX(2px); border-color: var(--paper); }
+
+/* Signal pass: accents belong to navigation, media framing and state changes. */
+.header-system { display: inline-flex; align-items: center; gap: .5rem; color: var(--technical-cyan-soft); font: 500 .5rem var(--font-mono); letter-spacing: .08em; }
+.header-system::before { content: ''; width: 4px; height: 4px; background: var(--technical-cyan); }
+body .site-header::after { content: ''; position: absolute; inset: auto 0 -1px; height: 1px; background: linear-gradient(90deg, var(--signal-red) 0 6%, var(--technical-line) 6% 22%, transparent 48%); pointer-events: none; }
+body .desktop-nav a:hover { color: var(--technical-cyan); }
+body .desktop-nav a::after { background: linear-gradient(90deg, var(--signal-red) 0 78%, var(--technical-cyan) 78%); }
+body .mobile-menu-inner > .eyebrow:first-child, body .street-topline > span:first-child, body .artist-hero-top > span:first-child { color: var(--technical-cyan-soft); }
+body .hero-signal { border-left: 1px solid var(--technical-line); padding-left: .7rem; }
+body .hero-signal::before { width: 3px; height: 7px; }
+body .hero-visual { box-shadow: inset 1px 0 var(--technical-line-faint); }
+body .hero-image-vignette { background: radial-gradient(ellipse at 100% 0, var(--technical-wash), transparent 54%), linear-gradient(90deg, #0505057a, transparent 35%), linear-gradient(0deg, #050505e6, transparent 58%); }
+body .hero-visual-label { border-left: 2px solid var(--technical-cyan); padding-left: .6rem; }
+body .hero-visual-index { padding: .45rem .6rem; border-top: 1px solid var(--technical-line); border-right: 1px solid var(--technical-line); }
+body .hero-bottom-line::before { background: linear-gradient(90deg, var(--signal-red) 0 22px, var(--technical-line) 22px 80px, var(--line) 80px); }
+.section-topline::before, .artist-rule::before, .street-section-rule::before { width: 58px; background: linear-gradient(90deg, var(--signal-red) 0 20px, transparent 20px 26px, var(--technical-cyan-soft) 26px 48px, transparent 48px 54px, var(--technical-cyan-soft) 54px); }
+.section-topline::after, .artist-rule::after, .street-section-rule::after { content: ''; position: absolute; top: -2px; right: 0; width: 3px; height: 3px; background: var(--technical-cyan-soft); opacity: .7; }
+body .section-topline > :first-child, body .street-section-rule > :first-child, body .artist-rule > :first-child { color: var(--technical-cyan-soft); }
+body .noise-overlay::after { background-image: repeating-linear-gradient(0deg, transparent 0 3px, #e5e1d81c 3px 4px), linear-gradient(90deg, transparent calc(100% - 1px), #56e0f04d 0), linear-gradient(0deg, transparent calc(100% - 1px), #56e0f04d 0); background-size: auto, 180px 180px, 180px 180px; }
+
+/* The film stays a passive, prerecorded process loop. */
+body .film-player { border-color: var(--technical-line); clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 9px, 100% 100%, 9px 100%, 0 calc(100% - 9px)); }
+body .film-player::before { content: ''; position: absolute; z-index: 3; inset: 0; border-top: 1px solid var(--technical-cyan); border-bottom: 1px solid var(--signal-red); opacity: .72; pointer-events: none; }
+body .film-media::after { inset: .4rem; border: 0; background: linear-gradient(var(--technical-cyan), var(--technical-cyan)) left top / 15px 1px no-repeat, linear-gradient(var(--technical-cyan), var(--technical-cyan)) left top / 1px 15px no-repeat, linear-gradient(var(--technical-cyan), var(--technical-cyan)) right bottom / 15px 1px no-repeat, linear-gradient(var(--technical-cyan), var(--technical-cyan)) right bottom / 1px 15px no-repeat; opacity: .65; }
+body .film-media::before { content: ''; position: absolute; z-index: 1; top: 12%; left: .4rem; right: .4rem; height: 1px; background: linear-gradient(90deg, transparent, #56e0f070, transparent); opacity: 0; pointer-events: none; animation: feed-scan 950ms ease-out 550ms 1; }
+body .film-treatment::after { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 3px, #050505 3px 4px); opacity: .12; }
+body .film-topline > span:first-child { font-size: .55rem; line-height: 1.6; }
+body .film-topline b { font-size: .46rem; font-weight: 500; color: var(--paper-deep); }
+body .film-rec i { animation: record-breathe 6s ease-in-out infinite; }
+body .film-player-hidden .film-rec i { animation-play-state: paused; }
+body .film-timecode { color: var(--technical-cyan); font-variant-numeric: tabular-nums; font-size: .5rem; }
+
+/* CTA cuts are shallow. Focus restores the rectangle so its outline is never clipped. */
+body .button-primary, body .booking-next { position: relative; clip-path: polygon(0 0, calc(100% - var(--cut-corner)) 0, 100% var(--cut-corner), 100% 100%, var(--cut-corner) 100%, 0 calc(100% - var(--cut-corner))); }
+body .button-primary::after, body .booking-next::after { content: ''; position: absolute; inset: 4px; border: 1px solid #e5e1d82e; pointer-events: none; clip-path: inherit; }
+body .button-primary::before { background: var(--technical-cyan); }
+body .button-primary:hover, body .booking-next:hover { border-color: var(--technical-cyan-soft); box-shadow: var(--glow-technical); }
+body .button-primary:focus-visible, body .booking-next:focus-visible { clip-path: none; outline: 2px solid var(--technical-cyan); outline-offset: 4px; }
+body .button-secondary:hover, body .button-ghost:hover { color: var(--technical-cyan); border-color: var(--technical-line); }
+body .button > span, body .booking-next > span { transition: color var(--fast), transform var(--fast); }
+body .button:hover > span, body .booking-next:hover > span { color: var(--technical-cyan); }
+body .button-primary:hover::after, body .booking-next:hover::after { border-color: var(--technical-line); }
+
+/* Shared archive framing, with the photo left untouched. */
+body .work-image, body .tattoo-card-media, body .artist-image-photo { position: relative; }
+body .work-image::after, body .tattoo-card-media::after, body .artist-image-photo::after { content: ''; position: absolute; inset: .55rem; border-top: 1px solid var(--technical-line); border-left: 1px solid var(--technical-line); width: 13px; height: 13px; pointer-events: none; }
+body .gallery-count, body .lightbox-position, body .street-detail-top > span, body .street-detail-media > .container-site > span:first-child { color: var(--technical-cyan-soft); }
+body .gallery-disclosure > span:first-child { color: var(--technical-cyan-soft); }
+body .tattoo-lightbox, body .street-lightbox { border-top-color: var(--technical-cyan-soft); }
+body .lightbox-top, body .street-lightbox-top { border-bottom-color: var(--technical-line); }
+body .lightbox-top > span, body .street-lightbox-top > span { color: var(--technical-cyan-soft); font-size: .55rem; letter-spacing: .04em; }
+body .close-hint { color: var(--technical-cyan-soft); font: 500 .5rem var(--font-mono); letter-spacing: .04em; border: 1px solid var(--technical-line); padding: .2rem .3rem; }
+body .lightbox-controls button:hover, body .street-lightbox button:hover { color: var(--technical-cyan); border-color: var(--technical-line); }
+body .street-detail-frame-caption { border-top: 1px solid var(--technical-line-faint); }
+body .artist-image-label { border-left: 2px solid var(--technical-cyan-soft); }
+body .tag { border-left-color: var(--technical-cyan-soft); }
+
+/* Intake: technical states around the existing, human-facing form. */
+body .booking-intro > span:first-child { color: var(--technical-cyan-soft); }
+body .booking-panel-header { border-top: 1px solid var(--technical-line); margin-top: -1px; }
+body .booking-progress li > span { display: inline-flex; align-items: center; justify-content: center; width: 25px; min-height: 22px; border: 1px solid transparent; }
+body .booking-progress-current > span { border-color: var(--technical-line); background: var(--technical-wash); }
+body .booking-progress-done > span { color: var(--paper); background: var(--signal-red-deep); }
+body .booking-field input:focus, body .booking-field textarea:focus, body .booking-unit-input:focus-within { box-shadow: inset 2px 0 var(--technical-cyan-soft); }
+body .booking-unit-input input:focus { box-shadow: none; }
+body .booking-choice-selected { border-left: 2px solid var(--signal-red); box-shadow: inset 0 -1px var(--technical-line); }
+body .booking-choice-selected b { color: var(--technical-cyan); }
+body .booking-review-heading { border-left: 2px solid var(--technical-cyan-soft); padding-left: .7rem; }
+body .booking-review dt { color: var(--technical-cyan-soft); }
+body .booking-message-preview summary { color: var(--technical-cyan); }
+body .contact-choice-top > span { color: var(--technical-cyan-soft); }
+body .contact-choice-dialog { border-top-color: var(--technical-cyan-soft); }
+body .contact-choice-option-primary { box-shadow: inset 2px 0 var(--signal-red); }
+body .footer { position: relative; }
+body .footer::before { content: ''; position: absolute; top: -1px; left: var(--gutter); width: 86px; height: 2px; background: linear-gradient(90deg, var(--signal-red) 0 44px, transparent 44px 51px, var(--technical-cyan-soft) 51px); }
+body .footer-end > span:nth-child(2) { color: var(--technical-cyan-soft); }
+
+/* Brief registration shifts; the REC light alone breathes continuously at low contrast. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .logo:hover strong { animation: signal-register 160ms linear 1; }
+}
+@keyframes signal-register { 0%, 100% { text-shadow: none; } 35% { text-shadow: 1px 0 #54d8e866, -1px 0 #d5241c66; } 65% { text-shadow: -1px 0 #54d8e844; } }
+@keyframes hero-type-in { 0% { transform: translate3d(0, 12px, 0); text-shadow: none; } 36% { text-shadow: 1px 0 #56e0f070, -1px 0 #d5241c66; } 52% { text-shadow: none; } 65% { text-shadow: -1px 0 #56e0f040; } 100% { transform: translate3d(0, 0, 0); text-shadow: none; } }
+@keyframes feed-scan { 0% { transform: translateY(0); opacity: 0; } 20% { opacity: .5; } 85% { opacity: .25; } 100% { transform: translateY(190px); opacity: 0; } }
+@keyframes record-breathe { 0%, 75%, 100% { opacity: 1; } 87% { opacity: .6; } }
+
+@media (max-width: 1023px) {
+  .header-system { display: none; }
+  body .hero-copy h1 { font-size: clamp(4rem, 8.7vw, 7rem); }
+  body .header-inner { gap: 1.5rem; }
+}
+@media (max-width: 767px) {
+  body .header-inner { min-height: 4.8rem; }
+  body .hero-layout { padding-top: 4.8rem; }
+  body .hero-copy { padding-top: 3rem; min-height: 38rem; }
+  body .hero-copy h1 { font-size: clamp(4.6rem, 16.5vw, 7rem); margin-block: 2.5rem 1.8rem; }
+  body .hero-copy .eyebrow { font-size: .54rem; gap: .65rem; }
+  body .hero-actions .button { font-size: .6rem; gap: 1rem; }
+  body .hero-bottom-line { font-size: .5rem; }
+  body .hero-visual { border: 0; }
+  body .hero-visual-mark { font-size: 8.5rem; bottom: 3rem; }
+  body .hero-visual-label, body .hero-visual-index { font-size: .5rem; }
+  body .noise-overlay::after { display: none; }
+  body .film-treatment::after { opacity: .07; }
+  body .film-media::before { animation: none; }
+  body .film-player .film-bottomline > .film-timecode { display: inline; font-size: .43rem; }
+  body .skull-atmosphere::after { display: none; }
+  body .manifesto-layout h2 { font-size: clamp(2.8rem, 10.5vw, 4.5rem); }
+  body .gallery-intro h1 { font-size: clamp(3.5rem, 17vw, 7rem); }
+  body .gallery-intro-lead { font-size: 2.5rem; }
+  body .gallery-disclosure { font-size: .5rem; }
+  body .lightbox-info h2 { font-size: clamp(2.7rem, 12vw, 4rem); }
+  body .street-hero h1 { font-size: clamp(4.2rem, 16vw, 7rem); }
+  body .street-detail h1 { font-size: clamp(3.2rem, 13vw, 6rem); }
+  body .street-manifesto h2 { font-size: clamp(3.7rem, 14vw, 6rem); }
+  body .street-prelude h2 { font-size: clamp(4rem, 16vw, 7rem); }
+  body .artist-hero h1 { font-size: clamp(5.5rem, 27vw, 13rem); }
+  body .artist-hero-copy p { font-size: 2.4rem; }
+  body .artist-hero-bottom > span { font-size: .75rem; }
+  body .contact-choice-copy h2 { font-size: clamp(3rem, 12vw, 4.5rem); }
+  body .footer-main .logo strong { font-size: 4.5rem; }
+  body .footer-end { font-size: .5rem; letter-spacing: .02em; }
+}
+@media (max-width: 359px) {
+  body .hero-copy h1 { font-size: 15.5vw; }
+  body .hero-actions { flex-direction: column; align-items: stretch; width: 100%; }
+  body .hero-bottom-line { align-items: flex-start; flex-direction: column; }
+  body .mobile-menu-inner { gap: 1.5rem; }
+}
+@media (max-width: 520px) { .close-hint { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  body .film-media::before, body .film-rec i { animation: none; }
+  body .logo:hover strong { animation: none; }
+  body .button:hover, body .contact-choice-option:hover { transform: none; }
+}
+@media (hover: none) {
+  body .button:hover, body .contact-choice-option:hover { transform: none; }
+  body .work-card:hover .work-image img, body .tattoo-card:hover .tattoo-visual img { transform: none; }
+  body .mobile-links a:hover { padding-left: 0; }
+}

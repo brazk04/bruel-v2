@@ -1,0 +1,64 @@
+.hero-film-anchor {
+  position: absolute;
+  z-index: 2;
+  top: 21%;
+  right: 8%;
+  width: clamp(14rem, 22vw, 19rem);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.2rem;
+  border: 1px solid #e8e3da40;
+  background: linear-gradient(0deg, #080808dd, transparent 50%, #08080878), url('/images/urban-texture.webp') center / cover;
+  box-shadow: 0 22px 50px #0008;
+  font: 700 .58rem var(--font-mono);
+  letter-spacing: .14em;
+  color: var(--paper);
+  transition: opacity 150ms;
+}
+.hero-film-anchor strong { margin-top: auto; font: 600 clamp(1.5rem, 2.5vw, 2.4rem)/.98 var(--font-editorial); letter-spacing: -.05em; }
+.hero-film-anchor small { margin-top: .9rem; color: var(--paper-deep); font: inherit; }
+.hero-film-anchor-ready { opacity: 0; }
+.film-player {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e8e3da4d;
+  background: var(--bg);
+  color: var(--paper);
+  box-shadow: 0 20px 55px #0009;
+  transform-origin: top left;
+  transition: transform 130ms linear, opacity 300ms ease, visibility 0s, border-color 300ms ease, box-shadow 300ms ease;
+  will-change: transform;
+  pointer-events: none;
+}
+.film-player-hidden { opacity: 0; pointer-events: none; visibility: hidden; transition: transform 130ms linear, opacity 300ms ease, visibility 0s 300ms; }
+.film-player-floating { border-color: #e8e3da30; box-shadow: 0 25px 65px #000c; }
+.film-media { position: relative; flex: 1; min-height: 0; overflow: hidden; background: #111; }
+.film-media video, .film-placeholder { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.film-media video { filter: contrast(1.07) saturate(.82); pointer-events: none; }
+.film-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.4rem; background: radial-gradient(circle at 65% 26%, #8631264d, transparent 32%), linear-gradient(155deg, #141414bf, #080808d9), url('/images/urban-texture.webp') center / cover; }
+.film-placeholder::before { content: ''; position: absolute; inset: 12%; border: 1px solid #e8e3da24; pointer-events: none; }
+.film-placeholder strong { font: 800 2.4rem var(--font-sans); letter-spacing: -.11em; }
+.film-placeholder span { font: 700 .58rem var(--font-mono); letter-spacing: .16em; color: var(--paper-deep); }
+.film-treatment { position: absolute; inset: 0; pointer-events: none; background: linear-gradient(0deg, #050505bf, transparent 30%, transparent 70%, #05050575), radial-gradient(ellipse at 50% 50%, transparent 48%, #05050575); }
+.film-topline, .film-bottomline { position: absolute; z-index: 2; left: 1rem; right: 1rem; display: flex; align-items: start; justify-content: space-between; gap: .5rem; pointer-events: none; font: 700 .58rem/1.5 var(--font-mono); letter-spacing: .12em; text-shadow: 0 1px 8px #000; }
+.film-topline { top: 1rem; }
+.film-topline i { display: inline-block; width: 5px; height: 5px; margin: 0 .28rem .1rem 0; border-radius: 50%; background: var(--rust-light); }
+.film-bottomline { bottom: 1rem; align-items: end; }
+.film-bottomline b { color: var(--paper-deep); font: inherit; }
+@media (max-width: 767px) {
+  .hero-film-anchor { top: 18%; right: 10%; width: clamp(11rem, 51vw, 14rem); }
+  .film-player { transition: opacity 250ms ease; }
+  .film-bottomline > span:last-child { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .film-player, .hero-film-anchor { transition: none !important; }
+  .film-media video { animation: none; }
+}
