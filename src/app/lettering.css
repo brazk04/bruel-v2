@@ -1,0 +1,45 @@
+#conteudo :is(h1, h2):not(:where(.admin-shell *, .booking-review *, .lightbox-info *, .sr-only)),
+body .footer-upper h2 {
+  font-family: var(--type-lettering), Georgia, serif;
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: 0;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
+
+#conteudo :is(h1, h2):not(:where(.admin-shell *, .booking-review *, .lightbox-info *, .sr-only)) em,
+body .footer-upper h2 em {
+  font-family: inherit;
+  font-weight: inherit;
+}
+
+#conteudo .hero-copy h1 {
+  max-inline-size: 100%;
+  font-size: clamp(3rem, 7.1vw, 8.3rem);
+  line-height: 1.02;
+}
+
+.hero-copy .hero-title-line {
+  margin: -.12em -.06em -.16em;
+  padding: .12em .06em .16em;
+}
+
+#conteudo .artist-hero h1.artist-fullname {
+  max-inline-size: 100%;
+  font-size: clamp(3.6rem, 8.4vw, 9rem);
+}
+
+#conteudo .booking-editorial h1 {
+  white-space: normal;
+}
+
+@media (max-width: 767px) {
+  #conteudo .hero-copy h1 {
+    font-size: clamp(2.8rem, 12.3vw, 5.8rem);
+  }
+
+  #conteudo .artist-hero h1.artist-fullname {
+    font-size: clamp(3.6rem, 13vw, 6rem);
+  }
+}
