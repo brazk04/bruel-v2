@@ -85,6 +85,7 @@
 .admin-field-list { display: grid; gap: .8rem; margin-top: 1rem; }
 .admin-field {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: .65rem;
   justify-items: start;
   min-width: 0;
