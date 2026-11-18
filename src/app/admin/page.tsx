@@ -3,7 +3,7 @@ import Link from "next/link";
 import { adminEnabled, isAdmin } from "@/lib/cms/auth";
 import { contentGroups } from "@/lib/cms/schema";
 import { readContent, storageEnabled } from "@/lib/cms/store";
-import { logout } from "./actions";
+import { AdminHeading } from "./admin-heading";
 import { LoginForm } from "./login-form";
 import { SiteEditor } from "./site-editor";
 import "./admin.css";
@@ -28,17 +28,10 @@ export default async function AdminPage() {
   }) : null;
 
   return <section className="admin-shell" aria-labelledby="admin-title">
-    <div className="admin-heading">
-      <div>
-        <h1 id="admin-title">Editar site</h1>
-        <p>Altere títulos e arquivos. As mudanças ficam visíveis no site ao publicar.</p>
-      </div>
-      <nav aria-label="Ações do painel">
-        <Link href="/" target="_blank" rel="noopener">Ver site ↗</Link>
-        <form action={logout}><button type="submit">Sair</button></form>
-      </nav>
-    </div>
     {snapshot ? <SiteEditor groups={contentGroups} initial={snapshot} />
-      : <p role="alert" className="admin-error">O armazenamento está indisponível. Recarregue a página para tentar novamente.</p>}
+      : <>
+          <AdminHeading />
+          <p role="alert" className="admin-error">O armazenamento está indisponível. Recarregue a página para tentar novamente.</p>
+        </>}
   </section>;
 }

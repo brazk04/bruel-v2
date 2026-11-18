@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState, type ChangeEvent } from "react";
 import { mediaFormats, titleMaxLength, type ContentField, type ContentGroup } from "@/lib/cms/fields";
 import type { SiteContent } from "@/lib/cms/schema";
+import { AdminHeading } from "./admin-heading";
 
 type Snapshot = { content: SiteContent; revision: string | null };
 type Notice = { text: string; error?: boolean };
@@ -103,6 +104,7 @@ export function SiteEditor({ groups, initial }: { groups: ContentGroup[]; initia
   }
 
   return <>
+    <AdminHeading confirmExit={dirty || Boolean(activeUpload)} saving={saving} />
     <div className="admin-publish">
       <div>
         <span>{dirty ? "Alterações pendentes" : "Tudo salvo"}</span>

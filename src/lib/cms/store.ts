@@ -49,7 +49,12 @@ function parseContent(input: unknown, strict: boolean): SiteContent {
 
 export async function readContent(): Promise<{ content: SiteContent; revision: string | null }> {
   if (!storageEnabled()) return { content: {}, revision: null };
-  const result = await get(contentPath(), { ...manifestStorage(), useCache: false });
+  const result = await get(contentPath(), {
+    ...manifestStorage(),
+    useCache: false,
+    // Conditional writes require the strong ETag of the uncompressed manifest.
+    headers: { "Accept-Encoding": "identity" },
+  });
   if (!result || result.statusCode !== 200) return { content: {}, revision: null };
   const data: unknown = await new Response(result.stream).json();
   return { content: parseContent(data, false), revision: result.blob.etag };
