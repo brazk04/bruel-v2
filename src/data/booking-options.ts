@@ -1,4 +1,5 @@
 export const bookingSteps = ["Você", "Ideia", "Tattoo", "Referências", "Disponibilidade", "Revisão"] as const;
+export const bookingTitles = bookingSteps.map((step, index) => index === 5 ? "Seu pedido." : `${step}.`);
 export const tattooStyles = ["Blackwork", "Lettering", "Old school", "Fine line", "Autoral", "Não sei ainda", "Outro"] as const;
 export const bodyPlacements = ["Braço", "Antebraço", "Mão", "Peito", "Costas", "Pescoço", "Perna", "Panturrilha", "Coxa", "Outro"] as const;
 export const tattooSizes = ["Pequena", "Média", "Grande", "Ainda não sei"] as const;

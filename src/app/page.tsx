@@ -1,3 +1,4 @@
+import { getSiteContent } from "@/lib/cms/store";
 import { Hero } from "@/components/sections/hero";
 import { Manifesto } from "@/components/sections/manifesto";
 import { WorkPreview } from "@/components/sections/work-preview";
@@ -7,15 +8,16 @@ import { About } from "@/components/sections/about";
 import { Process } from "@/components/sections/process";
 import { FinalCta } from "@/components/sections/final-cta";
 
-export default function Home() {
+export default async function Home() {
+  const content = await getSiteContent();
   return <>
-    <Hero />
-    <Manifesto />
-    <WorkPreview />
-    <Disciplines />
-    <StreetPrelude />
-    <About />
-    <Process />
-    <FinalCta />
+    <Hero content={content} />
+    <Manifesto content={content} />
+    <WorkPreview content={content} />
+    <Disciplines content={content} />
+    <StreetPrelude content={content} />
+    <About content={content} />
+    <Process content={content} />
+    <FinalCta content={content} />
   </>;
 }

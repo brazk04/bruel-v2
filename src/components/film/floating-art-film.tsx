@@ -4,10 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./floating-art-film.css";
 
-const poster = "/images/portfolio/film-poster.webp";
 const clamp = (value: number) => Math.min(1, Math.max(0, value));
 
-export function FloatingArtFilm({ src }: { src?: string }) {
+export function FloatingArtFilm({ src, poster }: { src?: string; poster?: string }) {
   const anchorRef = useRef<HTMLDivElement>(null);
   const filmRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);

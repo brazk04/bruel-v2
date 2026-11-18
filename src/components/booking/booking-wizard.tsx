@@ -19,7 +19,7 @@ const descriptions = [
   "Seu pedido está pronto para virar uma conversa.",
 ];
 
-export function BookingWizard() {
+export function BookingWizard({ titles }: { titles: string[] }) {
   const [step, setStep] = useState(0);
   const [editing, setEditing] = useState(false);
   const [data, setData] = useState<BookingFormData>(initialBookingData);
@@ -74,7 +74,7 @@ export function BookingWizard() {
   const edit = (target: number) => { setErrors({}); setEditing(true); setStep(target); };
   const message = buildBookingWhatsAppMessage(data, references.references.length);
 
-  return <div className="booking-wizard" id="booking-flow"><BookingProgress step={step} /><div className="booking-layout"><div className="booking-editorial"><span>BRUEL / PRÉ-AGENDAMENTO</span><h1 ref={headingRef} className={step === 3 || step === 4 ? "booking-title-long" : undefined} tabIndex={-1}>{step === 5 ? "Seu pedido." : bookingSteps[step] + "."}</h1><p>{descriptions[step]}</p><div className="booking-editorial-end"><span>PELE / DESENHO / IDENTIDADE</span><b aria-hidden="true">B—R</b></div></div>
+  return <div className="booking-wizard" id="booking-flow"><BookingProgress step={step} /><div className="booking-layout"><div className="booking-editorial"><span>BRUEL / PRÉ-AGENDAMENTO</span><h1 ref={headingRef} className={step === 3 || step === 4 ? "booking-title-long" : undefined} tabIndex={-1}>{titles[step]}</h1><p>{descriptions[step]}</p><div className="booking-editorial-end"><span>PELE / DESENHO / IDENTIDADE</span><b aria-hidden="true">B—R</b></div></div>
       <div className="booking-panel" ref={panelRef} data-booking-panel>
         <div className="booking-panel-header"><span>{String(step + 1).padStart(2, "0")} / 06</span><span>{bookingSteps[step].toUpperCase()}</span></div>
         {step < 5 ? <form onSubmit={next} noValidate>

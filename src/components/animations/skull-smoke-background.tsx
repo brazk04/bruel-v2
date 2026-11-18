@@ -3,12 +3,12 @@
 import Image from "next/image";
 import { useHeroAtmosphere } from "@/hooks/use-hero-atmosphere";
 
-export function SkullSmokeBackground() {
+export function SkullSmokeBackground({ src }: { src: string }) {
   const atmosphereRef = useHeroAtmosphere();
 
   return <div className="skull-atmosphere" aria-hidden="true" ref={atmosphereRef}>
     <Image
-      src="/images/skull-smoke.webp"
+      src={src}
       alt=""
       fill
       priority

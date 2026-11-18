@@ -1,0 +1,50 @@
+import { media, text, type ContentGroup } from "./fields";
+
+export const pageFields: ContentGroup[] = [
+  { title: "Página inicial", fields: [
+    text("home.hero.hero-title", "Título da abertura", "Arte que nasce\nda rua.\nVive na pele."),
+    media("home.texture", "Imagem de fundo da abertura", "/images/urban-texture.webp", "image"),
+    media("home.skull", "Imagem da animação da abertura", "/images/skull-smoke.webp", "image"),
+    media("home.film", "Vídeo da abertura", "/videos/bruel-loop.mp4", "video"),
+    media("home.filmPoster", "Capa do vídeo da abertura", "/images/portfolio/film-poster.webp"),
+    text("home.manifesto.manifesto-title", "Entre a pele e o concreto existe a mesma intenção: marcar presença.", "Entre a pele e o concreto existe a mesma intenção: marcar presença."),
+    text("home.disciplines.disciplines-title", "Tattoo e street art", "Tattoo e street art"),
+    text("home.disciplines.tattoo", "Tattoo.", "Tattoo."),
+    text("home.disciplines.street", "Street art.", "Street art."),
+    text("home.final-cta.final-title", "Sua ideia merece mais do que um desenho.", "Sua ideia merece\nmais do que\num desenho."),
+    text("home.work-preview.works-title", "Marcas que ficam.", "Marcas que ficam."),
+    text("home.process.process-title", "Tudo começa com uma ideia.", "Tudo começa\ncom uma ideia."),
+    text("home.street-prelude.street-prelude-title", "Da pele pro concreto.", "Da pele\npro concreto."),
+    media("home.streetPhoto", "Foto da chamada de Street Art", "/images/portfolio/graffiti-personagem.webp", "image"),
+    text("home.about.about-title", "Por trás do traço.", "Por trás do\ntraço."),
+    media("home.aboutPhoto", "Foto do artista", "/images/portfolio/artista-trabalhando.webp", "image"),
+  ] },
+  { title: "Trabalhos", fields: [
+    text("trabalhos.gallery-title", "Título da página Trabalhos", "Trabalhos."),
+    text("trabalhos.tattoo-street-title", "O traço sai pra rua.", "O traço sai\npra rua."),
+  ] },
+  { title: "Street Art", fields: [
+    text("street.street-title", "Título da página Street Art", "A rua\ntambém é tela."),
+    text("street.street-featured-title", "Escala muda o gesto.", "Escala muda\no gesto."),
+    text("street.street-documentary-title", "A imagem vive no entorno.", "A imagem vive\nno entorno."),
+    text("street.street-index-title", "Arquivo urbano.", "Arquivo urbano."),
+    text("street.street-manifesto-title", "A cidade muda. A marca fica.", "A cidade muda.\nA marca fica."),
+    text("street.tattoo-call", "Outra superfície. A mesma voz.", "Outra superfície.\nA mesma voz."),
+    media("street.cover", "Foto de abertura", "/images/portfolio/graffiti-personagem.webp", "image"),
+    media("street.documentPhoto", "Foto da seção documental", "/images/portfolio/estudio-original.jpg", "image"),
+    text("street.detail.context", "Traço, superfície e cidade.", "Traço, superfície\ne cidade."),
+  ] },
+  { title: "Sobre", fields: [
+    text("sobre.artist-bio-title", "O artista por trás do traço.", "O artista por trás\ndo traço."),
+    text("sobre.artist-manifesto-title", "Pele. Cidade. Presença.", "Pele.\nCidade.\nPresença."),
+    text("sobre.artist-trajectory-title", "Uma linguagem em camadas.", "Uma linguagem\nem camadas."),
+    text("sobre.artist-bridge-title", "Da parede pra pele. Da pele pra rua.", "Da parede\npra pele.\nDa pele\npra rua."),
+    text("sobre.artist-process-title", "A ideia encontra forma.", "A ideia encontra\nforma."),
+    text("sobre.artist-document-title", "Entre um traço e outro.", "Entre um traço\ne outro."),
+    text("sobre.artist-statement-title", "A imagem muda de suporte. A intenção permanece.", "A imagem muda\nde suporte.\nA intenção permanece."),
+    text("sobre.artist-contact-title", "Tem uma ideia? Vamos conversar.", "Tem uma ideia?\nVamos conversar."),
+  ] },
+  { title: "Rodapé", fields: [
+    text("footer.contact-title", "Onde a próxima marca começa.", "Onde a próxima\nmarca começa."),
+  ] },
+];
