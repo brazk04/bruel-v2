@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { NoiseOverlay } from "@/components/layout/noise-overlay";
-import { ScrollReveal } from "@/components/layout/scroll-reveal";
 import { ContactChoiceProvider } from "@/components/contact/contact-choice";
 import { site } from "@/lib/constants/site";
 import "./globals.css";
@@ -30,5 +29,5 @@ export const metadata: Metadata = { title: { default: site.title, template: `%s 
 export const viewport: Viewport = { width: "device-width", initialScale: 1, viewportFit: "cover", themeColor: "#050505" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR" className={`${display.variable} ${mono.variable} ${lettering.variable}`}><body><ContactChoiceProvider><a className="skip-link" href="#conteudo">Pular para conteúdo</a><NoiseOverlay /><Header /><main id="conteudo">{children}</main><Footer /><ScrollReveal /></ContactChoiceProvider></body></html>;
+  return <html lang="pt-BR" className={`${display.variable} ${mono.variable} ${lettering.variable}`}><body><ContactChoiceProvider><a className="skip-link" href="#conteudo">Pular para conteúdo</a><NoiseOverlay /><Header /><main id="conteudo">{children}</main><Footer /></ContactChoiceProvider></body></html>;
 }
