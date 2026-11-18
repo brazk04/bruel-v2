@@ -13,9 +13,11 @@ const openingScript = `(() => {
   }
 
   function finish() {
+    if (!opening.dataset.siteOpening) return;
     window.clearTimeout(deadline);
     window.removeEventListener('keydown', finish);
     delete opening.dataset.siteOpening;
+    window.setTimeout(() => { opening.hidden = true; }, 220);
   }
 
   function waitForHero() {
@@ -29,6 +31,7 @@ const openingScript = `(() => {
 
   const deadline = window.setTimeout(finish, 2000);
   opening.dataset.siteOpening = 'active';
+  opening.hidden = false;
   window.addEventListener('keydown', finish, { once: true });
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', waitForHero, { once: true });
@@ -39,7 +42,7 @@ const openingScript = `(() => {
 
 export function SiteOpening() {
   return <>
-    <div id="site-opening" className="site-opening" role="status" suppressHydrationWarning>
+    <div id="site-opening" className="site-opening" role="status" hidden suppressHydrationWarning>
       <span className="site-opening-mark" aria-hidden="true">BRUEL<span>.</span></span>
       <span className="site-opening-track" aria-hidden="true" />
       <span className="sr-only">Carregando o site</span>

@@ -2,7 +2,6 @@
   position: fixed;
   inset: 0;
   z-index: 90;
-  display: grid;
   place-content: center;
   justify-items: center;
   gap: 1.25rem;
@@ -13,6 +12,10 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity .22s ease-out, visibility 0s linear .22s;
+}
+
+.site-opening:not([hidden]) {
+  display: grid;
 }
 
 .site-opening[data-site-opening] {
@@ -52,5 +55,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-opening[data-site-opening] { display: none; }
+  .site-opening:not([hidden]) { display: none; }
 }
